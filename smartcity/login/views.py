@@ -31,7 +31,7 @@ def login_view(request):
                 return redirect(next_url)
             else:
                 context_dict={'username':uname}
-                return redirect('/users/')
+                return redirect('/citizen/')
         else:
             return HttpResponse("Invalid Credentials")   
     else:

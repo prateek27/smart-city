@@ -45,6 +45,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'events',
     'login',
+    'representative',
+    'citizen',
 )
 
 MIDDLEWARE_CLASSES = (
