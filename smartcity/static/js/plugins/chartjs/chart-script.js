@@ -3,7 +3,7 @@
 */
 //var randomScalingFactor = function(){ return Math.round(Math.random()*10)};
 var data = {
-	labels : ["JAN","FEB","MAR","APR","MAY","JUNE","JULY"],
+	labels : ["Sec-17","Sec-18","Sec-17","Sec-17","Sec-17","Sec-17",],
 	datasets : [
 		{
 			label: "First dataset",
@@ -112,7 +112,7 @@ setInterval(updateBarChart, 3000);
 Trending Bar Chart
 */
 var radarChartData = {
-	labels: ["Chrome", "Mozilla", "Safari", "IE10", "iPhone"],
+	labels: ["Sec-14", "Sec-18", "Sukhna", "Sec-19", "Sec-21"],
 	datasets: [
 		{
 			label: "First dataset",
@@ -187,7 +187,7 @@ var pieData = [
 Line Chart
 */
 var lineChartData = {
-	labels : ["USA","UK","UAE","AUS","IN","SA"],
+	labels : ["Mar","Apr","May","June","July","Aug","Sept","Oct"],
 	datasets : [
 		{
 			label: "My dataset",

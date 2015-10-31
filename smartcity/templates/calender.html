@@ -1,21 +1,15 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html lang="en">
 
-<!--================================================================================
-	Item Name: Materialize - Material Design Admin Template
-	Version: 2.1
-	Author: GeeksLabs
-	Author URL: http://www.themeforest.net/user/geekslabs
-================================================================================ -->
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="msapplication-tap-highlight" content="no">
-  <meta name="description" content="Materialize is a Material Design Admin Template,It's modern, responsive and based on Material Design by Google. ">
-  <meta name="keywords" content="materialize, admin template, dashboard template, flat admin template, responsive admin template,">
-  <title>Calendar | Materialize - Material Design Admin Template</title>
+  
+  <title>Calendar | Schedular</title>
 
   <!-- Favicons-->
   <link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32">
@@ -29,17 +23,17 @@
 
   <!-- CORE CSS-->
   
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="{% static 'css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection">
     <!-- Custome CSS-->    
-    <link href="css/custom-style.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="{% static 'css/custom-style.css' %}" type="text/css" rel="stylesheet" media="screen,projection">
 
 
   <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
-  <link href="css/prism.css" type="text/css" rel="stylesheet" media="screen,projection">
-  <link href="js/plugins/chartist-js/chartist.min.css" type="text/css" rel="stylesheet" media="screen,projection">
-  <link href="js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
-  <link href="js/plugins/fullcalendar/css/fullcalendar.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="{% static 'css/prism.css' %}" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="{% static 'js/plugins/chartist-js/chartist.min.css'%}" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="{% static 'js/plugins/perfect-scrollbar/perfect-scrollbar.css' %}" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="{% static 'js/plugins/fullcalendar/css/fullcalendar.min.css'%}" type="text/css" rel="stylesheet" media="screen,projection">
 </head>
 
 <body>
@@ -65,7 +59,7 @@
                     </ul>
                     <div class="header-search-wrapper hide-on-med-and-down">
                         <i class="mdi-action-search"></i>
-                        <input type="text" name="Search" class="header-search-input z-depth-2" placeholder="Explore Food Simulator.."/>
+                        <input type="text" name="Search" class="header-search-input z-depth-2" placeholder="Explore Smart City Portal.."/>
                     </div>
                     <ul class="right hide-on-med-and-down">                        
                         <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light toggle-fullscreen"><i class="mdi-action-settings-overscan"></i></a>
@@ -113,7 +107,7 @@
                                     <li><a href="#"><i class="mdi-hardware-keyboard-tab"></i> Logout</a>
                                     </li>
                                 </ul>
-                                <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown">Akshaya Patra<i class="mdi-navigation-arrow-drop-down right"></i></a>
+                                <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown">{{username}}<i class="mdi-navigation-arrow-drop-down right"></i></a>
                                 <p class="user-roal">Administrator</p>
                             </div>
                         </div>
@@ -125,9 +119,9 @@
                     
                             
                          
-                            <li class="bold"><a class="collapsible-header  waves-effect waves-cyan" href="UIComponents/table-basic.html"><i class="mdi-editor-border-all"></i>Student Diet Chart</a>
+                            <li class="bold"><a class="collapsible-header  waves-effect waves-cyan" href="UIComponents/table-basic.html"><i class="mdi-editor-border-all"></i>Appointments</a>
                             </li>
-                            <li class="bold"><a class="collapsible-header  waves-effect waves-cyan" href="contacts.html"><i class="mdi-editor-insert-comment"></i> School Head Contacts</a>
+                            <li class="bold"><a class="collapsible-header  waves-effect waves-cyan" href="contacts.html"><i class="mdi-editor-insert-comment"></i>Important Contacts</a>
                                 <div class="collapsible-body">
                                     <ul>
                                         <li><a href="form-elements.html">Form Elements</a>
@@ -159,7 +153,8 @@
                     <li class="user-details cyan darken-2">
                         <div class="row">
                             <div class="col col s4 m4 l4">
-                                <img src="images/avatar.jpg" alt="" class="circle responsive-img valign profile-image">
+                                <img src="{{userimage}}" alt="" class="circle responsive-img valign profile-image">
+                                
                             </div>
                             <div class="col col s8 m8 l8">
                                 <ul id="profile-dropdown" class="dropdown-content">
@@ -175,21 +170,21 @@
                                     <li><a href="#"><i class="mdi-hardware-keyboard-tab"></i> Logout</a>
                                     </li>
                                 </ul>
-                                <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown">Akshaya Patra<i class="mdi-navigation-arrow-drop-down right"></i></a>
+                                <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown">{{user.first_name}}<i class="mdi-navigation-arrow-drop-down right"></i></a>
                                 <p class="user-roal">Administrator</p>
                             </div>
                         </div>
                     </li>
-                    <li class="bold active"><a href="manager.html" class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i> Dashboard</a>
+                    <li class="bold active"><a href="manager.html" class="waves-effect waves-cyan"><i class="mdi-action-dashboard"></i> Profile</a>
                     </li>
                     <li class="bold"><a href="calender.html" class="waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i> Calender</a>
                     </li>
                     
                             
                          
-                            <li class="bold"><a class="collapsible-header  waves-effect waves-cyan" href="table-basic.html"><i class="mdi-editor-border-all"></i>Student Diet Chart</a>
+                            <li class="bold"><a class="collapsible-header  waves-effect waves-cyan" href="table-basic.html"><i class="mdi-editor-border-all"></i>Complaints</a>
                             </li>
-                            <li class="bold"><a class="collapsible-header  waves-effect waves-cyan"><i class="mdi-editor-insert-comment"></i> School Head Contacts</a>
+                            <li class="bold"><a class="collapsible-header  waves-effect waves-cyan"><i class="mdi-editor-insert-comment"></i>Important Contacts</a>
                                 <div class="collapsible-body">
                                     <ul>
                                         <li><a href="form-elements.html">Form Elements</a>
@@ -254,11 +249,12 @@
               <div class="row">
                 <div class="col s12 m4 l3">
                   <div id='external-events'>    
-                    <h4 class="header">Events</h4>
-                    <div class='fc-event cyan'>Order more Dal and Ration.</div>
-                    <div class='fc-event teal'>Meeting with Kitchen Heads</div>
+                    <h4 class="header">Tasks to do :</h4>
+                    
+                    <div class='fc-event cyan'>Visit the Railway bride.</div>
+                    <div class='fc-event teal'>Meeting with sanitation workers.</div>
                   
-                    <div class='fc-event light-blue accent-4'>Instructions to heads.</div>
+                    <div class='fc-event light-blue accent-4'>Instructions to Election Coordinators.</div>
                     <p>
                       <input type='checkbox' id='drop-remove' />
                       <label for='drop-remove'>remove after drop</label>
@@ -444,7 +440,7 @@
   <footer class="page-footer">
     <div class="footer-copyright">
       <div class="container">
-        <span class="right"> Design and Developed for<a class="grey-text text-lighten-4" href="http://geekslabs.com/">Code For India.</a></span>
+        <span class="right"> Developed for<a class="grey-text text-lighten-4" href="http://smartcity.in/">Smart Cities Mission.</a></span>
         </div>
     </div>
   </footer>
@@ -457,27 +453,26 @@
     ================================================ -->
     
     <!-- jQuery Library -->
-    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>    
+    <script type="text/javascript" src="{% static 'js/jquery-1.11.2.min.js' %}"></script>    
     <!--materialize js-->
-    <script type="text/javascript" src="js/materialize.js"></script>
+    <script type="text/javascript" src="{% static 'js/materialize.js' %}"></script>
     <!--prism-->
-    <script type="text/javascript" src="js/prism.js"></script>
+    <script type="text/javascript" src="{% static 'js/prism.js' %}"></script>
     <!--scrollbar-->
-    <script type="text/javascript" src="js/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/plugins/perfect-scrollbar/perfect-scrollbar.min.js' %}"></script>
     
     <!-- chartist -->
-    <script type="text/javascript" src="js/plugins/chartist-js/chartist.min.js"></script>   
+    <script type="text/javascript" src="{% static 'js/plugins/chartist-js/chartist.min.js' %}"></script>   
 
     <!-- Calendar Script -->
-    <script type="text/javascript" src="js/plugins/fullcalendar/lib/jquery-ui.custom.min.js"></script>
-    <script type="text/javascript" src="js/plugins/fullcalendar/lib/moment.min.js"></script>
-    <script type="text/javascript" src="js/plugins/fullcalendar/js/fullcalendar.min.js"></script>
-    <script type="text/javascript" src="js/plugins/fullcalendar/fullcalendar-script.js"></script>
+    <script type="text/javascript" src="{% static 'js/plugins/fullcalendar/lib/jquery-ui.custom.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/plugins/fullcalendar/lib/moment.min.js'%}"></script>
+    <script type="text/javascript" src="{% static 'js/plugins/fullcalendar/js/fullcalendar.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/plugins/fullcalendar/fullcalendar-script.js' %}"></script>
 
     <!--plugins.js - Some Specific JS codes for Plugin Settings-->
-    <script type="text/javascript" src="js/plugins.js"></script>
+    <script type="text/javascript" src="{% static 'js/plugins.js' %}"></script>
 
-    
 </body>
 
 </html>

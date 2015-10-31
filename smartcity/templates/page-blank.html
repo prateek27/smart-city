@@ -1,12 +1,6 @@
 <!DOCTYPE html>
+{% load staticfiles %}
 <html lang="en">
-
-<!--================================================================================
-	Item Name: Materialize - Material Design Admin Template
-	Version: 2.1
-	Author: GeeksLabs
-	Author URL: http://www.themeforest.net/user/geekslabs
-================================================================================ -->
 
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -15,7 +9,7 @@
   <meta name="msapplication-tap-highlight" content="no">
   <meta name="description" content="Materialize is a Material Design Admin Template,It's modern, responsive and based on Material Design by Google. ">
   <meta name="keywords" content="materialize, admin template, dashboard template, flat admin template, responsive admin template,">
-  <title>Page Blank | Materialize - Material Design Admin Template</title>
+  <title>Citizen's Page</title>
 
   <!-- Favicons-->
   <link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32">
@@ -29,16 +23,16 @@
 
   <!-- CORE CSS-->
   
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="{% static 'css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="{% static 'css/style.css' }" type="text/css" rel="stylesheet" media="screen,projection">
     <!-- Custome CSS-->    
-    <link href="css/custom-style.css" type="text/css" rel="stylesheet" media="screen,projection">
+    <link href="{% static 'css/custom-style.css'%}" type="text/css" rel="stylesheet" media="screen,projection">
 
 
   <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
-  <link href="css/prism.css" type="text/css" rel="stylesheet" media="screen,projection">
-  <link href="js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
-  <link href="js/plugins/chartist-js/chartist.min.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="{% static 'css/prism.css' %}" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="{% static 'js/plugins/perfect-scrollbar/perfect-scrollbar.css'%}" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="{% static 'js/plugins/chartist-js/chartist.min.css'%}" type="text/css" rel="stylesheet" media="screen,projection">
 </head>
 
 <body>
@@ -64,7 +58,7 @@
                     </ul>
                     <div class="header-search-wrapper hide-on-med-and-down">
                         <i class="mdi-action-search"></i>
-                        <input type="text" name="Search" class="header-search-input z-depth-2" placeholder="Explore Materialize"/>
+                        <input type="text" name="Search" class="header-search-input z-depth-2" placeholder="Search Smart City..."/>
                     </div>
                     <ul class="right hide-on-med-and-down">                        
                         <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light toggle-fullscreen"><i class="mdi-action-settings-overscan"></i></a>
@@ -143,36 +137,8 @@
                     </li>
                     <li class="bold"><a class="collapsible-header  waves-effect waves-cyan"><i class="mdi-image-palette"></i> UI Elements</a>
                         <div class="collapsible-body">
-                            <ul>
-                                <li><a href="ui-buttons.html">Buttons</a>
-                                </li>
-                                <li><a href="ui-badges.html">Badges</a>
-                                </li>
-                                <li><a href="ui-cards.html">Cards</a>
-                                </li>
-                                <li><a href="ui-collections.html">Collections</a>
-                                </li>
-                                <li><a href="ui-accordions.html">Accordian</a>
-                                </li>
-                                <li><a href="ui-tabs.html">Tabs</a>
-                                </li>
-                                <li><a href="ui-navbar.html">Navbar</a>
-                                </li>
-                                <li><a href="ui-pagination.html">Pagination</a>
-                                </li>
-                                <li><a href="ui-preloader.html">Preloader</a>
-                                </li>
-                                <li><a href="ui-modals.html">Modals</a>
-                                </li>
-                                <li><a href="ui-media.html">Media</a>
-                                </li>
-                                <li><a href="ui-toasts.html">Toasts</a>
-                                </li>
-                                <li><a href="ui-tooltip.html">Tooltip</a>
-                                </li>
-                                <li><a href="ui-waves.html">Waves</a>
-                                </li>
-                            </ul>
+                            
+                            
                         </div>
                     </li>
                     <li class="bold"><a href="app-widget.html" class="waves-effect waves-cyan"><i class="mdi-device-now-widgets"></i> Widgets <span class="new badge"></span></a>
@@ -511,8 +477,7 @@
   <footer class="page-footer">
     <div class="footer-copyright">
       <div class="container">
-        <span>Copyright © 2015 <a class="grey-text text-lighten-4" href="http://themeforest.net/user/geekslabs/portfolio?ref=geekslabs" target="_blank">GeeksLabs</a> All rights reserved.</span>
-        <span class="right"> Design and Developed by <a class="grey-text text-lighten-4" href="http://geekslabs.com/">GeeksLabs</a></span>
+        <span class="right"> Design and Developed by <a class="grey-text text-lighten-4" href="http://smartcityindia.com/">Smart City India</a></span>
         </div>
     </div>
   </footer>
@@ -525,19 +490,17 @@
     ================================================ -->
     
     <!-- jQuery Library -->
-    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>    
+    <script type="text/javascript" src="{% static 'js/jquery-1.11.2.min.js'%}"></script>    
     <!--materialize js-->
-    <script type="text/javascript" src="js/materialize.js"></script>
+    <script type="text/javascript" src="{% static 'js/materialize.js'%}"></script>
     <!--prism-->
-    <script type="text/javascript" src="js/prism.js"></script>
+    <script type="text/javascript" src="{% static 'js/prism.js'%}"></script>
     <!--scrollbar-->
-    <script type="text/javascript" src="js/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/plugins/perfect-scrollbar/perfect-scrollbar.min.js'%}"></script>
     <!-- chartist -->
-    <script type="text/javascript" src="js/plugins/chartist-js/chartist.min.js"></script>   
+    <script type="text/javascript" src="{% static 'js/plugins/chartist-js/chartist.min.js'%}"></script>   
     
     <!--plugins.js - Some Specific JS codes for Plugin Settings-->
-    <script type="text/javascript" src="js/plugins.js"></script>
-    
+    <script type="text/javascript" src="{% static 'js/plugins.js'%}"></script>
 </body>
-
 </html>

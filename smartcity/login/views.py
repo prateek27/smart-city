@@ -19,7 +19,7 @@ from django.core import serializers
 def login_view(request):
     if request.user.is_authenticated():
         #return HttpResponse("You are already Logged in " + request.user.username) 
-        return redirect('/users/')
+        return redirect('/representative/')
     if request.method =='POST':
         next_url = request.POST.get('next',None)
         uname = request.POST.get('username')
@@ -31,13 +31,38 @@ def login_view(request):
                 return redirect(next_url)
             else:
                 context_dict={'username':uname}
-                return redirect('/citizen/')
+                return redirect('/representative/')
         else:
             return HttpResponse("Invalid Credentials")   
     else:
         login_form = LoginForm()
         context_dict = {'form':login_form} 
         return render(request,"login.html",context_dict)
+
+
+def citizen_login_view(request):
+    if request.user.is_authenticated():
+        #return HttpResponse("You are already Logged in " + request.user.username) 
+        return redirect('/citizen/')
+    if request.method =='POST':
+        next_url = request.POST.get('next',None)
+        uname = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(username=uname,password=password)
+        if(user is not None):
+            login(request,user)
+            if next_url is not None:
+                return redirect(next_url)
+            else:
+                context_dict={'user':user}
+                return redirect('/citizen/',context_dict)
+        else:
+            return HttpResponse("Invalid Credentials")   
+    else:
+        login_form = LoginForm()
+        context_dict = {'form':login_form} 
+        return render(request,"login.html",context_dict)
+
 
 def logout_view(request):
     logout(request)
@@ -69,8 +94,6 @@ def signup_view(request):
         user_profile_form = UserProfileForm()
         context_dict ={"user_form":user_form,"user_profile_form":user_profile_form};
         return render(request,'signup.html',context_dict)
-
-
 
 
 def forgot_password_view(request):
